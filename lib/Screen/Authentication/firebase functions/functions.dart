@@ -46,6 +46,7 @@ void validateUserLogin(
             (route) => false);
       }
     } on FirebaseAuthException {
+      Navigator.pop(context);
       reuseFlutterToast(context: context, text: 'Invaid Login Credentials');
     }
   }
