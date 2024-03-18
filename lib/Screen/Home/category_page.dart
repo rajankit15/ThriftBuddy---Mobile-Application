@@ -11,9 +11,27 @@ class CategoryScreen extends StatefulWidget {
 class _CategoryScreenState extends State<CategoryScreen> {
   @override
   Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Category"),
+      ),
+      body: GridView.builder(
+          itemCount: 10,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 3,
+              crossAxisSpacing: 4,
+              mainAxisSpacing: 4,
+              mainAxisExtent: 200),
+          itemBuilder: (context, index) {
+            return displayContainer();
+          }),
+    );
+  }
+
+  Widget displayContainer() {
     return Container(
-      padding: EdgeInsets.all(10),
-      color: Colors.cyan,
+      margin: const EdgeInsets.all(4),
+      color: Colors.amber,
     );
   }
 }

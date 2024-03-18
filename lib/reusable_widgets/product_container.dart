@@ -15,8 +15,9 @@ Widget productContainer(double containerWidth, Item items) {
       children: [
         Image.network(
           items.imgUrl[0],
-          fit: BoxFit.fill,
+          fit: BoxFit.contain,
           width: containerWidth,
+          alignment: Alignment.center,
         ),
         const SizedBox(height: 10),
         Text(

@@ -194,48 +194,54 @@ class _HomeScreenState extends State<HomeScreen> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => ProductPage(
-                                  item: Item(
-                                    sellerName: featuredItem[index]
-                                        ['sellerName'] as String,
-                                    sellerId: featuredItem[index]['sellerId']
-                                        as String,
-                                    title:
-                                        featuredItem[index]['title'] as String,
-                                    imgUrl: featuredItem[index]['imgUrl']
-                                        as List<String>,
-                                    price:
-                                        featuredItem[index]['price'] as String,
-                                    description: featuredItem[index]
-                                        ['description'] as String,
-                                    category: featuredItem[index]['category']
-                                        as String,
+                                builder: (context) => SizedBox(
+                                  child: ProductPage(
+                                    item: Item(
+                                      sellerName: featuredItem[index]
+                                          ['sellerName'] as String,
+                                      sellerId: featuredItem[index]['sellerId']
+                                          as String,
+                                      title: featuredItem[index]['title']
+                                          as String,
+                                      imgUrl: featuredItem[index]['imgUrl']
+                                          as List<String>,
+                                      price: featuredItem[index]['price']
+                                          as String,
+                                      description: featuredItem[index]
+                                          ['description'] as String,
+                                      category: featuredItem[index]['category']
+                                          as String,
+                                    ),
                                   ),
                                 ),
                               ),
                             );
                           },
-                          child: productContainer(
-                            180,
-                            Item(
-                              sellerName:
-                                  featuredItem[index]['sellerName'] as String,
-                              sellerId:
-                                  featuredItem[index]['sellerId'] as String,
-                              title: featuredItem[index]['title'] as String,
-                              imgUrl:
-                                  featuredItem[index]['imgUrl'] as List<String>,
-                              price: featuredItem[index]['price'] as String,
-                              description:
-                                  featuredItem[index]['description'] as String,
-                              category:
-                                  featuredItem[index]['category'] as String,
+                          child: SizedBox(
+                            height: 280,
+                            child: productContainer(
+                              180,
+                              Item(
+                                sellerName:
+                                    featuredItem[index]['sellerName'] as String,
+                                sellerId:
+                                    featuredItem[index]['sellerId'] as String,
+                                title: featuredItem[index]['title'] as String,
+                                imgUrl: featuredItem[index]['imgUrl']
+                                    as List<String>,
+                                price: featuredItem[index]['price'] as String,
+                                description: featuredItem[index]['description']
+                                    as String,
+                                category:
+                                    featuredItem[index]['category'] as String,
+                              ),
                             ),
                           ),
                         ),
                       ),
                     ),
                   ),
+                  const SizedBox(height: 10)
                 ],
               ),
             ),
@@ -268,7 +274,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             crossAxisCount: 2,
                             mainAxisSpacing: 2,
                             crossAxisSpacing: 2,
-                            mainAxisExtent: 300,
+                            mainAxisExtent: 290,
                           ),
                           itemCount: snapshot.data!.length,
                           itemBuilder: (BuildContext context, int index) {

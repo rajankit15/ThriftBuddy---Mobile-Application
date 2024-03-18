@@ -158,8 +158,8 @@ class _SellScreenState extends State<SellScreen> {
                         titlecontroller.clear();
                         pricecontroller.clear();
                         desccontroller.clear();
-                        _selectedCategory = null;
                         setState(() {
+                          _selectedCategory = null;
                           imgFile.clear();
                         });
                       }
