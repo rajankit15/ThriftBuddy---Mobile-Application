@@ -10,7 +10,6 @@
 .svn/
 migrate_working_dir/
 
-# Ignore Firebase config file
 firebase_config.dart
 
 
